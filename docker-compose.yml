@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    image: docker-node-mongo-app
+    build: ./web-site
+    command: node myServer.js
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./web-site:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - "mongo"
+      
+  mongo:
+    image: mongo:3.6.17
+    ports:
+      - 27017:27017
