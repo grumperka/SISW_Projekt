@@ -28,7 +28,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({},{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){  
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	
 	app.result=result; 
@@ -45,7 +45,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Przystawki" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){ 
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -61,7 +61,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Zupy" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -77,7 +77,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Salaty" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});  
@@ -93,7 +93,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Makarony" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -108,8 +108,8 @@ if(err) throw err;
 
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Miesa" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
-	if(err) throw err;
-	console.log(result);
+	//if(err) throw err;
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -125,7 +125,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Ryby i owoce morza" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -142,7 +142,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Desery" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -158,7 +158,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ kategoria: "Dla dzieci" },{nazwa: 1,cena:1, status: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexCategory.ejs', {	potrawy: app.result	});
@@ -174,7 +174,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ status: "Dostepne" },{nazwa: 1,cena:1, kategoria: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexStatus.ejs', {	potrawy: app.result	});
@@ -190,7 +190,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ status: "Niedostepne" },{nazwa: 1,cena:1, kategoria: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexStatus.ejs', {	potrawy: app.result	});
@@ -206,7 +206,7 @@ if(err) throw err;
 var dbo=db.db("mydb");
 	dbo.collection("potrawy").find({ status: "Na zamowienie" },{nazwa: 1,cena:1, kategoria: 1}).toArray(function(err,result){
 	if(err) throw err;
-	console.log(result);
+	//console.log(result);
 	
 	app.result=result;
 	resp.render('indexStatus.ejs', {	potrawy: app.result	});
@@ -274,7 +274,7 @@ if(err) throw err;
 	dbo.collection("users").findOne({ email: req.body.email, pswd: req.body.pswd },function(err,result){
 	if(err) throw err;
 	if(result){
-	console.log(result);
+	//console.log(result);
 	
 	req.session.email=req.body.email; 
     req.session.pswd=req.body.pswd ;
