@@ -74,13 +74,18 @@
 	 
   </div>
   <ul class="navbar-nav">
-  <li class="nav-item">
-        <a class="nav-link" href="login.html">Zaloguj sie</a>
-      </li>
-	  
+     
+    <%  if(logged == false) {  %>
+      
+        <li class="nav-item">
+                <a class="nav-link" href="login.html">Zaloguj sie</a>
+              </li>
+    <% } else { %>
+
 	  <li class="nav-item">
         <a class="nav-link" href="/logOut">Wyloguj sie</a>
       </li>
+      <% } %>
 	  
   <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -108,6 +113,7 @@
 <li class="users" class="list-group-item">
 <h3>E-mail : <%= users.email %></h3>
 <h4>Haslo : <%= users.pswd %></h4>
+<h4>Logged : <%= logged %></h4>
 </li>
 
 </ul>

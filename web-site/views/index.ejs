@@ -9,6 +9,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   
+  <script>
+
+    console.log(req.isAuthenticated());
+
+    </script>
+
   <style> 
 #menu {
 	margin-bottom:0;
@@ -79,13 +85,17 @@ background-color: gainsboro;
 	 
   </div>
   <ul class="navbar-nav">
+    <%  if(logged == false) {  %>
+      
+      <li class="nav-item">
+              <a class="nav-link" href="login.html">Zaloguj sie</a>
+            </li>
+  <% } else { %>
+
   <li class="nav-item">
-        <a class="nav-link" href="login.html">Zaloguj sie</a>
-      </li>
-	  
-	  <li class="nav-item">
-        <a class="nav-link" href="/logOut">Wyloguj sie</a>
-      </li>
+      <a class="nav-link" href="/logOut">Wyloguj sie</a>
+    </li>
+    <% } %>
 	  
   <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -135,6 +145,8 @@ $(document).ready(function(){
 </ul>
 </div>
 
+<%  if(logged == true) {  %>
+    
 <div class="col-sm-5">
 <h2 class="display-4">Dodaj nowa potrawe: </h2>
 <form action="/potrawy" method="POST"><br/>
@@ -169,13 +181,14 @@ $(document).ready(function(){
 <button type="submit" class="btn btn-primary">Dodaj</button>
 </form>
 </div>
+<% } %>
 
 </div>
 </div>
 <br>
 <footer class="footer bg-dark" style="position: fixed;left: 0; bottom: 0; width: 100%; text-align: center;">
       <div class="container">
-        <span class="text-muted"><b>Wereszczynska Siwiak	Projekt SISW	2021</b></span>
+        <span class="text-muted"><b>Wereszczynska Siwiak	Projekt SISW	2021 <% logged %> </b></span>
       </div>
     </footer>
 </body>

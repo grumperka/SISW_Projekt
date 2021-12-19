@@ -80,13 +80,17 @@ $(document).ready(function(){
 	 
   </div>
   <ul class="navbar-nav">
+    <%  if(logged == false) {  %>
+      
+      <li class="nav-item">
+              <a class="nav-link" href="login.html">Zaloguj sie</a>
+            </li>
+  <% } else { %>
+
   <li class="nav-item">
-        <a class="nav-link" href="login.html">Zaloguj sie</a>
-      </li>
-	  
-	  <li class="nav-item">
-        <a class="nav-link" href="/logOut">Wyloguj sie</a>
-      </li>
+      <a class="nav-link" href="/logOut">Wyloguj sie</a>
+    </li>
+    <% } %>
 	  
   <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -115,12 +119,14 @@ $(document).ready(function(){
 <span><%= wynik.status %></span><br />
 </div>
 
+<%  if(logged == true) {  %>
 <div class="col-sm-4">
 <button id="toggle" class="btn btn-light">Opcje</button><br />
 <a href="/delete/<%= wynik._id %>" id="link1" class="btn btn-danger">Usun</a><br />
 <a href="/edit/<%= wynik._id %>" id="link2" class="btn btn-warning">Edytuj</a><br />
 </div>
 </div>
+<% }  %>
 
 <br /><br />
 <button class="btn btn-light"><a href="/">Powrot</a></button>

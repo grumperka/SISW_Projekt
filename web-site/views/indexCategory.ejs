@@ -78,13 +78,17 @@ background-color: gainsboro;
   </div>
   
   <ul class="navbar-nav">
+    <%  if(logged == false) {  %>
+      
+      <li class="nav-item">
+              <a class="nav-link" href="login.html">Zaloguj sie</a>
+            </li>
+  <% } else { %>
+
   <li class="nav-item">
-        <a class="nav-link" href="login.html">Zaloguj sie</a>
-      </li>
-	  
-	  <li class="nav-item">
-        <a class="nav-link" href="/logOut">Wyloguj sie</a>
-      </li>
+      <a class="nav-link" href="/logOut">Wyloguj sie</a>
+    </li>
+    <% } %>
 	  
   <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
